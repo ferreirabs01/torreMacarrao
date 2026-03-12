@@ -18,33 +18,62 @@
             --neon-pink: #ff00ff;
             --neon-blue: #00f2ff;
             --neon-green: #39ff14;
+            /* Aumento da base da fonte */
+            --r-main-font-size: 42px; 
         }
-        .reveal { background-color: var(--r-background-color); }
-        .reveal h1, .reveal h2 { 
+        .reveal { 
+            background-color: var(--r-background-color); 
+            font-size: var(--r-main-font-size);
+        }
+        .reveal h1 { 
+            font-size: 3.5em; 
             text-transform: uppercase; 
-            text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-            letter-spacing: 2px;
+            text-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+            letter-spacing: 3px;
+            margin-bottom: 40px;
         }
-        .reveal h2 { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink); }
+        .reveal h2 { 
+            font-size: 2.2em;
+            color: var(--neon-pink); 
+            text-shadow: 0 0 10px var(--neon-pink); 
+            margin-bottom: 30px;
+        }
         .reveal section { color: var(--r-main-color); }
+        
         .border-neon {
-            border: 2px solid var(--neon-blue);
-            box-shadow: 0 0 15px var(--neon-blue);
-            border-radius: 10px;
-            padding: 20px;
+            border: 3px solid var(--neon-blue);
+            box-shadow: 0 0 20px var(--neon-blue);
+            border-radius: 15px;
+            padding: 30px;
             background: rgba(0, 242, 255, 0.05);
+            line-height: 1.4;
         }
+        
+        /* Listas Maiores */
         .list-neon li {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             list-style: none;
+            font-size: 1.2em;
         }
         .list-neon li::before {
             content: "▶";
             color: var(--neon-green);
-            margin-right: 10px;
-            text-shadow: 0 0 5px var(--neon-green);
+            margin-right: 15px;
+            text-shadow: 0 0 8px var(--neon-green);
         }
-        img { border-radius: 8px; box-shadow: 0 0 20px rgba(255,255,255,0.1); }
+        
+        /* Tabelas Maiores */
+        .reveal table {
+            font-size: 0.9em;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .reveal table th, .reveal table td {
+            padding: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        img { border-radius: 12px; box-shadow: 0 0 30px rgba(0, 242, 255, 0.2); }
     </style>
 </head>
 <body>
