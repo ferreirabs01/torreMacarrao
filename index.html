@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Dinâmica da Torre de Macarrão</title>
+    <title>Marshmallow Challenge - Nexos.ia</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
@@ -18,62 +18,90 @@
             --neon-pink: #ff00ff;
             --neon-blue: #00f2ff;
             --neon-green: #39ff14;
-            /* Aumento da base da fonte */
-            --r-main-font-size: 42px; 
+            --r-main-font-size: 40px;
         }
-        .reveal { 
-            background-color: var(--r-background-color); 
-            font-size: var(--r-main-font-size);
+
+        .reveal { background-color: var(--r-background-color); font-size: var(--r-main-font-size); }
+        .reveal h1 { font-size: 3em; text-transform: uppercase; text-shadow: 0 0 15px var(--neon-blue); margin-bottom: 20px; }
+        .reveal h2 { font-size: 2em; color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink); }
+
+        /* Animação Giratória da Capa */
+        .loader {
+            width: 300px;
+            height: 300px;
+            border: 5px solid transparent;
+            border-top-color: var(--neon-blue);
+            border-bottom-color: var(--neon-pink);
+            border-radius: 50%;
+            animation: spin 4s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -150px;
+            z-index: -1;
+            opacity: 0.5;
         }
-        .reveal h1 { 
-            font-size: 3.5em; 
-            text-transform: uppercase; 
-            text-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
-            letter-spacing: 3px;
-            margin-bottom: 40px;
+
+        @keyframes spin {
+            0% { transform: rotate(0deg) scale(1); border-width: 5px; }
+            50% { transform: rotate(180deg) scale(1.2); border-width: 10px; }
+            100% { transform: rotate(360deg) scale(1); border-width: 5px; }
         }
-        .reveal h2 { 
-            font-size: 2.2em;
-            color: var(--neon-pink); 
-            text-shadow: 0 0 10px var(--neon-pink); 
-            margin-bottom: 30px;
-        }
-        .reveal section { color: var(--r-main-color); }
-        
+
+        /* Boxes e Listas */
         .border-neon {
             border: 3px solid var(--neon-blue);
             box-shadow: 0 0 20px var(--neon-blue);
             border-radius: 15px;
             padding: 30px;
             background: rgba(0, 242, 255, 0.05);
-            line-height: 1.4;
-        }
-        
-        /* Listas Maiores */
-        .list-neon li {
-            margin-bottom: 25px;
-            list-style: none;
-            font-size: 1.2em;
-        }
-        .list-neon li::before {
-            content: "▶";
-            color: var(--neon-green);
-            margin-right: 15px;
-            text-shadow: 0 0 8px var(--neon-green);
-        }
-        
-        /* Tabelas Maiores */
-        .reveal table {
-            font-size: 0.9em;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        .reveal table th, .reveal table td {
-            padding: 15px;
-            border-bottom: 1px solid #333;
         }
 
-        img { border-radius: 12px; box-shadow: 0 0 30px rgba(0, 242, 255, 0.2); }
+        .list-neon li { list-style: none; margin-bottom: 20px; }
+        .list-neon li::before { content: "▶"; color: var(--neon-green); margin-right: 15px; }
+
+        /* Estilo dos Cronômetros */
+        .timer-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .timer-card {
+            background: #111;
+            border: 2px solid var(--neon-pink);
+            padding: 20px;
+            border-radius: 15px;
+            width: 45%;
+            box-shadow: 0 0 15px var(--neon-pink);
+        }
+
+        .timer-display {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 3em;
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+            margin: 20px 0;
+        }
+
+        .timer-controls button {
+            background: transparent;
+            border: 1px solid var(--r-main-color);
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 0.5em;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .timer-controls button:hover {
+            background: var(--neon-blue);
+            color: black;
+            border-color: var(--neon-blue);
+        }
     </style>
 </head>
 <body>
@@ -81,111 +109,60 @@
         <div class="slides">
 
             <section>
+                <div class="loader"></div>
                 <h1>Marshmallow Challenge</h1>
-                <p style="color: var(--neon-pink);">A Dinâmica da Torre de Macarrão</p>
-                <div style="margin-top: 40px; font-size: 0.8em; border-top: 1px solid #333; padding-top: 20px;">
-                    Integração entre Turmas | Design Thinking | Engenharia de Software
-                </div>
+                <p style="color: var(--neon-pink); font-weight: bold;">Dinâmica de Integração & Engenharia</p>
+                <p style="font-size: 0.6em; margin-top: 100px;">Nexos.ia | Professor Bruno</p>
             </section>
 
             <section>
-                <h2>Kit de Construção</h2>
-                <div style="display: flex; align-items: center; justify-content: space-around;">
-                    <div style="width: 45%; text-align: left;" class="list-neon">
-                        <ul>
-                            <li>20 Espaguetes crus</li>
-                            <li>1 Metro de fita crepe</li>
-                            <li>1 Metro de barbante</li>
-                            <li>1 Marshmallow (O Rei)</li>
-                        </ul>
-                    </div>
-                    <div style="width: 45%;">
-                        http://googleusercontent.com/image_generation_content/0
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>A Regra de Ouro</h2>
-                <div class="border-neon">
-                    <p>Construir a estrutura <strong>mais alta</strong> e <strong>autossustentável</strong>.</p>
-                    <p style="color: var(--neon-green); font-size: 1.5em; font-weight: bold;">O Marshmallow deve estar no TOPO.</p>
-                </div>
-                <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
-                    <div style="text-align: center;">
-                        <p style="font-size: 0.5em;">Exemplo de Estrutura</p>
-                        <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=400" alt="Tower Example" width="250">
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Formação e Planejamento</h2>
-                <ul class="list-neon">
-                    <li><strong>Grupos Mistos:</strong> 2 integrantes de cada sala por equipe.</li>
-                    <li><strong>Planejamento:</strong> 20 minutos para estratégia e amarrações.</li>
-                    <li><strong>Execução:</strong> 18 minutos de construção ativa.</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Design Thinking</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.7em;">
-                    <div class="border-neon">
-                        <h3>Prototipagem Rápida</h3>
-                        <p>Falhe rápido para aprender rápido. Teste o suporte do macarrão desde o minuto 1.</p>
-                    </div>
-                    <div class="border-neon">
-                        <h3>Iteração</h3>
-                        <p>Ajuste a estrutura conforme constrói. Não espere o final para colocar o marshmallow.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Requisitos de Software</h2>
-                <table style="font-size: 0.6em; width: 100%;">
-                    <thead>
-                        <tr style="color: var(--neon-blue);">
-                            <th>Tipo</th>
-                            <th>No Desafio</th>
-                            <th>No Software</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Funcional</td>
-                            <td>Altura da torre</td>
-                            <td>Funcionalidades do sistema</td>
-                        </tr>
-                        <tr>
-                            <td>Não Funcional</td>
-                            <td>Estabilidade (ficar em pé)</td>
-                            <td>Performance, Segurança</td>
-                        </tr>
-                        <tr>
-                            <td>Risco</td>
-                            <td>Peso do Marshmallow</td>
-                            <td>Componente crítico/legado</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section>
-                <h2>Principais Lições</h2>
-                <div class="list-neon" style="text-align: left; font-size: 0.8em;">
-                    <ul>
-                        <li><span style="color: var(--neon-pink);">O Marshmallow é uma metáfora:</span> Identifique o risco real do seu projeto cedo.</li>
-                        <li><span style="color: var(--neon-blue);">Geometria importa:</span> Triângulos oferecem a base mais estável.</li>
-                        <li><span style="color: var(--neon-green);">Comunicação:</span> Sob pressão, clareza é mais importante que velocidade.</li>
+                <h2>Materiais por Equipe</h2>
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <ul class="list-neon" style="text-align: left; font-size: 0.8em;">
+                        <li>20 Espaguetes</li>
+                        <li>1m Fita Crepe</li>
+                        <li>1m Barbante</li>
+                        <li>1 Marshmallow</li>
                     </ul>
+                    <img src="http://googleusercontent.com/image_generation_content/0" width="450">
                 </div>
             </section>
 
             <section>
-                <h1 style="color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green);">Mãos à Obra!</h1>
-                <p>O tempo está correndo...</p>
+                <h2>O Objetivo</h2>
+                <div class="border-neon">
+                    <p>Construir a estrutura <strong>MAIS ALTA</strong></p>
+                    <p>Que suporte o peso do <strong>MARSHMALLOW</strong></p>
+                    <p style="color: var(--neon-green);">No topo da torre!</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Contagem Regressiva</h2>
+                
+                <div class="timer-container">
+                    <div class="timer-card">
+                        <p style="font-size: 0.6em; color: var(--neon-blue);">PLANEJAMENTO</p>
+                        <div id="plan-display" class="timer-display">20:00</div>
+                        <div class="timer-controls">
+                            <button onclick="startTimer('plan', 1200)">Start</button>
+                            <button onclick="pauseTimer('plan')">Pause</button>
+                            <button onclick="resetTimer('plan', 1200)">Reset</button>
+                        </div>
+                    </div>
+
+                    <div class="timer-card" style="border-color: var(--neon-blue); box-shadow: 0 0 15px var(--neon-blue);">
+                        <p style="font-size: 0.6em; color: var(--neon-pink);">EXECUÇÃO</p>
+                        <div id="exec-display" class="timer-display" style="color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink);">18:00</div>
+                        <div class="timer-controls">
+                            <button onclick="startTimer('exec', 1080)">Start</button>
+                            <button onclick="pauseTimer('exec')">Pause</button>
+                            <button onclick="resetTimer('exec', 1080)">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="font-size: 0.4em; margin-top: 40px; opacity: 0.6;">Dica: Comecem a prototipar nos primeiros minutos!</p>
             </section>
 
         </div>
@@ -193,13 +170,45 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
     <script>
-        Reveal.initialize({
-            hash: true,
-            controls: true,
-            progress: true,
-            center: true,
-            transition: 'slide' 
-        });
+        Reveal.initialize({ hash: true, controls: true, progress: true, center: true });
+
+        // Lógica dos Cronômetros
+        let timers = {
+            plan: { interval: null, remaining: 1200 }, // 20 min
+            exec: { interval: null, remaining: 1080 }  // 18 min
+        };
+
+        function formatTime(seconds) {
+            let m = Math.floor(seconds / 60);
+            let s = seconds % 60;
+            return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+
+        function startTimer(type, initial) {
+            if (timers[type].interval) return;
+            
+            timers[type].interval = setInterval(() => {
+                if (timers[type].remaining <= 0) {
+                    clearInterval(timers[type].interval);
+                    timers[type].interval = null;
+                    alert("Tempo Esgotado!");
+                    return;
+                }
+                timers[type].remaining--;
+                document.getElementById(`${type}-display`).innerText = formatTime(timers[type].remaining);
+            }, 1000);
+        }
+
+        function pauseTimer(type) {
+            clearInterval(timers[type].interval);
+            timers[type].interval = null;
+        }
+
+        function resetTimer(type, seconds) {
+            pauseTimer(type);
+            timers[type].remaining = seconds;
+            document.getElementById(`${type}-display`).innerText = formatTime(seconds);
+        }
     </script>
 </body>
 </html>
