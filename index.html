@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Dinâmica da Torre de Macarrão</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    
+    <style>
+        :root {
+            --r-background-color: #050505;
+            --r-main-font: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --r-main-color: #eee;
+            --r-heading-color: #00f2ff;
+            --neon-pink: #ff00ff;
+            --neon-blue: #00f2ff;
+            --neon-green: #39ff14;
+        }
+        .reveal { background-color: var(--r-background-color); }
+        .reveal h1, .reveal h2 { 
+            text-transform: uppercase; 
+            text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+            letter-spacing: 2px;
+        }
+        .reveal h2 { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink); }
+        .reveal section { color: var(--r-main-color); }
+        .border-neon {
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 15px var(--neon-blue);
+            border-radius: 10px;
+            padding: 20px;
+            background: rgba(0, 242, 255, 0.05);
+        }
+        .list-neon li {
+            margin-bottom: 15px;
+            list-style: none;
+        }
+        .list-neon li::before {
+            content: "▶";
+            color: var(--neon-green);
+            margin-right: 10px;
+            text-shadow: 0 0 5px var(--neon-green);
+        }
+        img { border-radius: 8px; box-shadow: 0 0 20px rgba(255,255,255,0.1); }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section>
+                <h1>Marshmallow Challenge</h1>
+                <p style="color: var(--neon-pink);">A Dinâmica da Torre de Macarrão</p>
+                <div style="margin-top: 40px; font-size: 0.8em; border-top: 1px solid #333; padding-top: 20px;">
+                    Integração entre Turmas | Design Thinking | Engenharia de Software
+                </div>
+            </section>
+
+            <section>
+                <h2>Kit de Construção</h2>
+                <div style="display: flex; align-items: center; justify-content: space-around;">
+                    <div style="width: 45%; text-align: left;" class="list-neon">
+                        <ul>
+                            <li>20 Espaguetes crus</li>
+                            <li>1 Metro de fita crepe</li>
+                            <li>1 Metro de barbante</li>
+                            <li>1 Marshmallow (O Rei)</li>
+                        </ul>
+                    </div>
+                    <div style="width: 45%;">
+                        http://googleusercontent.com/image_generation_content/0
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>A Regra de Ouro</h2>
+                <div class="border-neon">
+                    <p>Construir a estrutura <strong>mais alta</strong> e <strong>autossustentável</strong>.</p>
+                    <p style="color: var(--neon-green); font-size: 1.5em; font-weight: bold;">O Marshmallow deve estar no TOPO.</p>
+                </div>
+                <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
+                    <div style="text-align: center;">
+                        <p style="font-size: 0.5em;">Exemplo de Estrutura</p>
+                        <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=400" alt="Tower Example" width="250">
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Formação e Planejamento</h2>
+                <ul class="list-neon">
+                    <li><strong>Grupos Mistos:</strong> 2 integrantes de cada sala por equipe.</li>
+                    <li><strong>Planejamento:</strong> 20 minutos para estratégia e amarrações.</li>
+                    <li><strong>Execução:</strong> 18 minutos de construção ativa.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Design Thinking</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.7em;">
+                    <div class="border-neon">
+                        <h3>Prototipagem Rápida</h3>
+                        <p>Falhe rápido para aprender rápido. Teste o suporte do macarrão desde o minuto 1.</p>
+                    </div>
+                    <div class="border-neon">
+                        <h3>Iteração</h3>
+                        <p>Ajuste a estrutura conforme constrói. Não espere o final para colocar o marshmallow.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Requisitos de Software</h2>
+                <table style="font-size: 0.6em; width: 100%;">
+                    <thead>
+                        <tr style="color: var(--neon-blue);">
+                            <th>Tipo</th>
+                            <th>No Desafio</th>
+                            <th>No Software</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Funcional</td>
+                            <td>Altura da torre</td>
+                            <td>Funcionalidades do sistema</td>
+                        </tr>
+                        <tr>
+                            <td>Não Funcional</td>
+                            <td>Estabilidade (ficar em pé)</td>
+                            <td>Performance, Segurança</td>
+                        </tr>
+                        <tr>
+                            <td>Risco</td>
+                            <td>Peso do Marshmallow</td>
+                            <td>Componente crítico/legado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Principais Lições</h2>
+                <div class="list-neon" style="text-align: left; font-size: 0.8em;">
+                    <ul>
+                        <li><span style="color: var(--neon-pink);">O Marshmallow é uma metáfora:</span> Identifique o risco real do seu projeto cedo.</li>
+                        <li><span style="color: var(--neon-blue);">Geometria importa:</span> Triângulos oferecem a base mais estável.</li>
+                        <li><span style="color: var(--neon-green);">Comunicação:</span> Sob pressão, clareza é mais importante que velocidade.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h1 style="color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green);">Mãos à Obra!</h1>
+                <p>O tempo está correndo...</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide' 
+        });
+    </script>
+</body>
+</html>
