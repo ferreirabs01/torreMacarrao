@@ -50,6 +50,48 @@
         }
 
         .svg-icon { width: 50px; height: 50px; flex-shrink: 0; }
+
+        /* --- EFEITO DE CONFETES NEON --- */
+        .confetti-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0; left: 0;
+            overflow: hidden;
+            z-index: -1; /* Fica atrás do texto */
+            opacity: 0; /* Invisível até o slide ser ativado */
+            transition: opacity 1s ease;
+        }
+
+        /* Ativa os confetes quando o slide "present" for focado */
+        .present .confetti-container { opacity: 1; }
+
+        .confetti {
+            position: absolute;
+            width: 10px; height: 10px;
+            background-color: var(--neon-blue);
+            border-radius: 2px;
+            animation: confetti-fall 4s linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Variações de Confetes (Cores e Posições) */
+        .confetti:nth-child(2n) { background-color: var(--neon-pink); width: 15px; height: 5px; animation-duration: 5s; }
+        .confetti:nth-child(3n) { background-color: var(--neon-green); width: 8px; height: 8px; animation-duration: 3s; animation-delay: 1s; }
+        .confetti:nth-child(4n) { background-color: var(--text-main); width: 12px; height: 12px; animation-duration: 6s; animation-delay: 2s; }
+        
+        /* Posições Horizontais Aleatórias (Exemplos) */
+        .confetti:nth-child(1) { left: 10%; } .confetti:nth-child(2) { left: 20%; }
+        .confetti:nth-child(3) { left: 30%; } .confetti:nth-child(4) { left: 40%; }
+        .confetti:nth-child(5) { left: 50%; } .confetti:nth-child(6) { left: 60%; }
+        .confetti:nth-child(7) { left: 70%; } .confetti:nth-child(8) { left: 80%; }
+        .confetti:nth-child(9) { left: 90%; } .confetti:nth-child(10) { left: 95%; }
+        /* Adicione mais se quiser um efeito mais denso */
+
     </style>
 </head>
 <body>
@@ -99,16 +141,6 @@
             </section>
 
             <section>
-                <h2>A Síndrome do "Ta-dah!"</h2>
-                <div class="content-box">
-                    <p>Muitas equipes passam 17 minutos planejando e apenas 1 minuto executando.</p>
-                    <p class="highlight">O resultado?</p>
-                    <p>O "Ta-dah!" (a entrega final) vira um "Oh-oh!" (o projeto colapsa sob o peso do requisito real).</p>
-                </div>
-                <p style="font-size: 0.7em; opacity: 0.6;">Lição: No mercado, planos perfeitos raramente sobrevivem ao primeiro contato com o cliente.</p>
-            </section>
-
-            <section>
                 <h2>Lições para a Carreira</h2>
                 <div class="feedback-grid">
                     <div class="content-box" style="border-left-color: var(--neon-pink)">
@@ -130,15 +162,22 @@
                         <li>Qual foi o maior <span class="highlight">gargalo</span> na comunicação entre as turmas?</li>
                         <li>O <span class="highlight">planejamento</span> de 20 min foi seguido ou descartado?</li>
                         <li>Se tivessem mais <span class="highlight">5 minutos</span>, o que mudariam na arquitetura?</li>
-                        <li>Como o <span class="highlight">estresse do tempo</span> afetou a qualidade técnica?</li>
                     </ul>
                 </div>
             </section>
 
             <section>
+                <div class="confetti-container">
+                    <div class="confetti"></div> <div class="confetti"></div>
+                    <div class="confetti"></div> <div class="confetti"></div>
+                    <div class="confetti"></div> <div class="confetti"></div>
+                    <div class="confetti"></div> <div class="confetti"></div>
+                    <div class="confetti"></div> <div class="confetti"></div>
+                    </div>
+
                 <h1 style="text-shadow: 0 0 30px var(--neon-green); color: var(--neon-green)">Missão Cumprida</h1>
-                <p>Apliquem esses conceitos no próximo Sprint!</p>
-                <p style="margin-top: 50px; font-size: 0.5em"> Debriefing Mode Off</p>
+                <p>Parabéns à equipe vencedora!</p>
+                <p style="margin-top: 50px; font-size: 0.5em">Nexos.ia | Debriefing Mode Off</p>
             </section>
 
         </div>
